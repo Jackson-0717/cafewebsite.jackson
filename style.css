@@ -338,3 +338,253 @@ header h1 {
 .reroll-btn:hover, .restart-btn:hover {
   background: #ffe4d0;
 }
+
+.nearby-btn {
+  margin-top: 16px;
+  background: #2b1a52;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.nearby-btn:hover { background: #3a2470; }
+
+.nearby-box {
+  margin-top: 18px;
+  text-align: left;
+  border-top: 1px dashed #f0c9a8;
+  padding-top: 16px;
+}
+
+.nearby-status {
+  color: #8a6a54;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.nearby-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nearby-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 4px;
+  border-bottom: 1px solid #fbe6d4;
+  font-size: 0.92rem;
+}
+
+.nearby-list li:last-child { border-bottom: none; }
+
+.nearby-name { color: #3a2618; font-weight: 600; }
+.nearby-dist { color: #ff6b35; white-space: nowrap; }
+
+.nearby-disclaimer {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: #b8927a;
+}
+
+/* ---------------- 小遊戲彈窗 ---------------- */
+.minigame-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 10, 46, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.minigame-box {
+  text-align: center;
+  color: #fff;
+}
+
+.minigame-caption {
+  margin-top: 22px;
+  font-size: 1.05rem;
+  color: #d8c8ff;
+}
+
+/* 塔羅牌 */
+.tarot-card {
+  width: 120px;
+  height: 180px;
+  margin: 0 auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.tarot-card.flipped { transform: rotateY(180deg); }
+
+.tarot-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+}
+
+.tarot-back {
+  background: linear-gradient(135deg, #3a2470, #6b3fa0);
+  font-size: 2.6rem;
+  box-shadow: 0 0 24px rgba(150, 100, 255, 0.5);
+}
+
+.tarot-front {
+  background: linear-gradient(135deg, #ffcf6b, #ff8c42);
+  color: #3a1c00;
+  transform: rotateY(180deg);
+}
+
+/* 骰子 */
+.dice {
+  font-size: 5rem;
+  display: inline-block;
+}
+
+.dice.rolling {
+  animation: dice-roll 0.15s linear infinite;
+}
+
+@keyframes dice-roll {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.15); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* 抽籤 */
+.lots-cup {
+  font-size: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.lots-stick {
+  display: inline-block;
+  transform: translateY(0);
+}
+
+.lots-stick.pop {
+  animation: lots-pop 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes lots-pop {
+  0% { transform: translateY(0) rotate(0deg); }
+  60% { transform: translateY(-50px) rotate(15deg); }
+  100% { transform: translateY(-40px) rotate(8deg); }
+}
+
+/* 輪盤 */
+.wheel {
+  font-size: 5rem;
+  display: inline-block;
+  transform: rotate(0deg);
+}
+
+.wheel.spin {
+  transition: transform 1.6s cubic-bezier(0.15, 0.8, 0.3, 1);
+  transform: rotate(var(--spin, 1080deg));
+}
+
+/* ---------------- 終焉結局動畫 ---------------- */
+.ending-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(180deg, var(--e1, #120a2e), var(--e2, #2b1a52) 55%, var(--e3, #8a6fd8));
+  animation: ending-fade-in 1s ease;
+}
+
+@keyframes ending-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.ending-eyebrow {
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 6px;
+  z-index: 1;
+}
+
+.ending-title {
+  font-size: 3rem;
+  margin: 0 0 14px;
+  z-index: 1;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.06em;
+  animation: ending-title-in 1.4s ease;
+}
+
+@keyframes ending-title-in {
+  0% { letter-spacing: 0.6em; opacity: 0; }
+  100% { letter-spacing: 0.06em; opacity: 1; }
+}
+
+.ending-line {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  max-width: 420px;
+  z-index: 1;
+  margin: 0 0 32px;
+}
+
+.ending-screen .enter-btn {
+  z-index: 1;
+}
+
+.ending-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ending-particle {
+  position: absolute;
+  will-change: transform, opacity;
+}
+
+@keyframes particle-rise {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.1); opacity: 0; }
+}
+
+@keyframes particle-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes particle-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -30px); }
+}
+
+@keyframes particle-twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}

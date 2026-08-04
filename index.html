@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今天吃什麼？</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🍽️ 今天吃什麼？</h1>
+      <p class="subtitle">選一下你的口味，交給我們幫你決定！</p>
+    </header>
+
+    <section class="filters">
+      <div class="filter-group">
+        <h3>餐點類型</h3>
+        <div class="chip-row" id="category-filters"></div>
+      </div>
+      <div class="filter-group">
+        <h3>口味偏好</h3>
+        <div class="chip-row" id="taste-filters"></div>
+      </div>
+      <div class="filter-group">
+        <h3>預算</h3>
+        <div class="chip-row" id="budget-filters"></div>
+      </div>
+    </section>
+
+    <div class="action-row">
+      <button id="decide-btn" class="decide-btn">🎲 幫我決定！</button>
+      <button id="reset-btn" class="reset-btn">重設篩選</button>
+    </div>
+
+    <section class="result" id="result">
+      <div class="result-placeholder">選好條件後，按下「幫我決定！」</div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

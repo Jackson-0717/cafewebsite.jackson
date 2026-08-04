@@ -7,35 +7,46 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <header>
-      <h1>🍽️ 今天吃什麼？</h1>
-      <p class="subtitle">選一下你的口味，交給我們幫你決定！</p>
-    </header>
 
-    <section class="filters">
-      <div class="filter-group">
-        <h3>餐點類型</h3>
-        <div class="chip-row" id="category-filters"></div>
-      </div>
-      <div class="filter-group">
-        <h3>口味偏好</h3>
-        <div class="chip-row" id="taste-filters"></div>
-      </div>
-      <div class="filter-group">
-        <h3>預算</h3>
-        <div class="chip-row" id="budget-filters"></div>
-      </div>
-    </section>
+  <!-- 阿拉丁神燈入場動畫 -->
+  <section id="intro-screen" class="intro-screen">
+    <div class="stars"></div>
+    <h1 class="intro-title">今天吃什麼？</h1>
+    <p class="intro-subtitle">摩擦神燈，召喚美食精靈</p>
 
-    <div class="action-row">
-      <button id="decide-btn" class="decide-btn">🎲 幫我決定！</button>
-      <button id="reset-btn" class="reset-btn">重設篩選</button>
+    <div class="lamp-wrap" id="lamp-wrap">
+      <div class="smoke smoke1"></div>
+      <div class="smoke smoke2"></div>
+      <div class="smoke smoke3"></div>
+      <div class="genie" id="genie">🧞</div>
+      <div class="lamp" id="lamp">🪔</div>
     </div>
 
-    <section class="result" id="result">
-      <div class="result-placeholder">選好條件後，按下「幫我決定！」</div>
+    <p class="intro-hint" id="intro-hint">點一下神燈試試看 ✨</p>
+    <button class="enter-btn" id="enter-btn" hidden>帶我進入美食世界 →</button>
+  </section>
+
+  <!-- 主體 App -->
+  <div class="app" id="app" hidden>
+
+    <header>
+      <h1>🍽️ 今天吃什麼？</h1>
+      <p class="subtitle">回答精靈的 5 個問題，讓祂幫你決定！</p>
+    </header>
+
+    <section class="quiz" id="quiz">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="quiz-genie">🧞</div>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="chip-row" id="quiz-options"></div>
+      <div class="quiz-nav">
+        <button class="back-btn" id="back-btn">← 上一題</button>
+        <span class="quiz-step" id="quiz-step"></span>
+      </div>
     </section>
+
+    <section class="result" id="result" hidden></section>
+
   </div>
 
   <script src="data.js"></script>

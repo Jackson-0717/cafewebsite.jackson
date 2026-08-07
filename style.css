@@ -153,10 +153,24 @@ body {
   animation: pop 0.4s ease;
 }
 
-/* ---------------- 主體 ---------------- */
+/* ---------------- 主體（真實大自然照片背景） ---------------- */
 .app {
-  background: linear-gradient(160deg, #fff7ed 0%, #ffe4d6 100%);
+  position: relative;
   min-height: 100vh;
+}
+
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(160deg, rgba(255, 247, 237, 0.82) 0%, rgba(255, 228, 214, 0.75) 100%),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Sun_shining_on_forest_floor_(Unsplash).jpg?width=1600");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .app .app-inner,
@@ -164,6 +178,13 @@ body {
   max-width: 640px;
   margin: 0 auto;
   padding: 32px 20px 60px;
+}
+
+header,
+.quiz,
+.result {
+  position: relative;
+  z-index: 1;
 }
 
 header {

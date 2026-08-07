@@ -15,39 +15,23 @@ body {
   color: #3a2618;
 }
 
-/* ---------------- 入場動畫 ---------------- */
+/* ---------------- 入場動畫（真實星空照片＋魔法陣） ---------------- */
 .intro-screen {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 20%, #2b1a52 0%, #120a2e 70%);
+  background-image:
+    radial-gradient(circle at 50% 30%, rgba(10, 5, 25, 0.35) 0%, rgba(5, 2, 15, 0.75) 100%),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Heart_and_Soul_nebulae.jpg?width=1920");
+  background-size: cover;
+  background-position: center;
   color: #fff;
   position: relative;
   overflow: hidden;
   text-align: center;
   padding: 20px;
-}
-
-.stars {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(1.5px 1.5px at 20% 30%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 70% 20%, #fff, transparent),
-    radial-gradient(1px 1px at 40% 70%, #fff, transparent),
-    radial-gradient(1px 1px at 85% 60%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 60% 85%, #fff, transparent),
-    radial-gradient(1px 1px at 10% 80%, #fff, transparent);
-  background-repeat: no-repeat;
-  opacity: 0.7;
-  animation: twinkle 3s infinite alternate;
-}
-
-@keyframes twinkle {
-  0% { opacity: 0.4; }
-  100% { opacity: 0.9; }
 }
 
 .intro-title {
@@ -65,39 +49,72 @@ body {
 
 .lamp-wrap {
   position: relative;
-  width: 220px;
-  height: 220px;
+  width: 260px;
+  height: 260px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   z-index: 1;
 }
 
+.mc-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 8px rgba(255, 200, 110, 0.55));
+  transition: filter 0.6s ease;
+}
+
+.mc-ring-outer { animation: mc-spin-cw 22s linear infinite; }
+.mc-ring-mid { animation: mc-spin-ccw 16s linear infinite; }
+.mc-ring-inner { animation: mc-spin-cw 9s linear infinite; }
+
+@keyframes mc-spin-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes mc-spin-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.mc-glow {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 220, 150, 0.55) 0%, rgba(255, 180, 90, 0) 70%);
+  animation: mc-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes mc-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
 .lamp {
-  font-size: 5rem;
+  position: absolute;
+  inset: 0;
   cursor: pointer;
-  transition: transform 0.15s ease;
-  filter: drop-shadow(0 0 20px rgba(255, 200, 80, 0.5));
-  user-select: none;
+  border-radius: 50%;
 }
 
-.lamp:active {
-  transform: scale(0.92) rotate(-4deg);
+.lamp-wrap.activated .mc-ring {
+  filter: drop-shadow(0 0 20px rgba(255, 210, 130, 0.9));
 }
 
-.lamp.rubbed {
-  animation: shake 0.5s ease;
-}
+.lamp-wrap.activated .mc-ring-outer { animation-duration: 6s; }
+.lamp-wrap.activated .mc-ring-mid { animation-duration: 4s; }
+.lamp-wrap.activated .mc-ring-inner { animation-duration: 2.2s; }
 
-@keyframes shake {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-8deg); }
-  75% { transform: rotate(8deg); }
+.lamp-wrap.activated .mc-glow {
+  animation-duration: 1s;
 }
 
 .genie {
   position: absolute;
-  bottom: 60px;
   font-size: 4rem;
   opacity: 0;
   transform: translateY(20px) scale(0.5);
@@ -107,30 +124,7 @@ body {
 
 .genie.appear {
   opacity: 1;
-  transform: translateY(-60px) scale(1.1);
-}
-
-.smoke {
-  position: absolute;
-  bottom: 70px;
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle, rgba(200, 220, 255, 0.55) 0%, rgba(200, 220, 255, 0) 70%);
-  border-radius: 50%;
-  opacity: 0;
-}
-
-.smoke.rise {
-  animation: rise 1.2s ease-out forwards;
-}
-
-.smoke2.rise { animation-delay: 0.15s; }
-.smoke3.rise { animation-delay: 0.3s; }
-
-@keyframes rise {
-  0% { opacity: 0; transform: translateY(0) scale(0.6); }
-  30% { opacity: 0.9; }
-  100% { opacity: 0; transform: translateY(-140px) scale(2.2); }
+  transform: translateY(-10px) scale(1.1);
 }
 
 .intro-hint {

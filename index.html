@@ -46,21 +46,34 @@
     </defs>
   </svg>
 
-  <!-- 阿拉丁神燈入場動畫 -->
+  <!-- 魔法陣入場動畫 -->
   <section id="intro-screen" class="intro-screen">
-    <div class="stars"></div>
     <h1 class="intro-title">今天吃什麼？</h1>
-    <p class="intro-subtitle">摩擦神燈，召喚美食精靈</p>
+    <p class="intro-subtitle">踏入魔法陣，召喚美食精靈</p>
 
     <div class="lamp-wrap" id="lamp-wrap">
-      <div class="smoke smoke1"></div>
-      <div class="smoke smoke2"></div>
-      <div class="smoke smoke3"></div>
+      <svg class="mc-ring mc-ring-outer" viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="140" fill="none" stroke="#ffcf6b" stroke-width="1.5" opacity="0.55"/>
+        <circle cx="150" cy="150" r="128" fill="none" stroke="#ffb266" stroke-width="6" stroke-dasharray="2 12" opacity="0.8"/>
+      </svg>
+      <svg class="mc-ring mc-ring-mid" viewBox="0 0 300 300">
+        <polygon points="150,55 227,187 73,187" fill="none" stroke="#ffd98a" stroke-width="1.5" opacity="0.75"/>
+        <polygon points="150,245 73,113 227,113" fill="none" stroke="#ffd98a" stroke-width="1.5" opacity="0.75"/>
+        <circle cx="150" cy="150" r="96" fill="none" stroke="#ffcf6b" stroke-width="1" opacity="0.5"/>
+      </svg>
+      <svg class="mc-ring mc-ring-inner" viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="62" fill="none" stroke="#ffe0ad" stroke-width="4" stroke-dasharray="1 9" opacity="0.85"/>
+        <circle cx="150" cy="42" r="3.5" fill="#ffe0ad"/>
+        <circle cx="150" cy="258" r="3.5" fill="#ffe0ad"/>
+        <circle cx="42" cy="150" r="3.5" fill="#ffe0ad"/>
+        <circle cx="258" cy="150" r="3.5" fill="#ffe0ad"/>
+      </svg>
+      <div class="mc-glow"></div>
       <div class="genie" id="genie"><svg class="mascot-icon"><use href="#mascot"></use></svg></div>
-      <div class="lamp" id="lamp">🪔</div>
+      <div class="lamp" id="lamp" aria-label="啟動魔法陣"></div>
     </div>
 
-    <p class="intro-hint" id="intro-hint">點一下神燈試試看 ✨</p>
+    <p class="intro-hint" id="intro-hint">點一下魔法陣試試看 ✨</p>
     <button class="enter-btn" id="enter-btn" hidden>帶我進入美食世界 →</button>
   </section>
 

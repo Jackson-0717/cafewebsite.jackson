@@ -1,11 +1,11 @@
-/* ---------------- 入場動畫（阿拉丁神燈） ---------------- */
+/* ---------------- 入場動畫（魔法陣） ---------------- */
 const lamp = document.getElementById("lamp");
 const genie = document.getElementById("genie");
 const introHint = document.getElementById("intro-hint");
 const enterBtn = document.getElementById("enter-btn");
 const introScreen = document.getElementById("intro-screen");
 const appEl = document.getElementById("app");
-const smokes = document.querySelectorAll(".smoke");
+const lampWrap = document.getElementById("lamp-wrap");
 
 let lampRubbed = false;
 
@@ -13,8 +13,7 @@ lamp.addEventListener("click", () => {
   if (lampRubbed) return;
   lampRubbed = true;
 
-  lamp.classList.add("rubbed");
-  smokes.forEach(s => s.classList.add("rise"));
+  lampWrap.classList.add("activated");
 
   setTimeout(() => {
     genie.classList.add("appear");

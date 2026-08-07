@@ -1,6 +1,5 @@
 /* ---------------- 入場動畫（魔法陣） ---------------- */
 const lamp = document.getElementById("lamp");
-const genie = document.getElementById("genie");
 const introHint = document.getElementById("intro-hint");
 const enterBtn = document.getElementById("enter-btn");
 const introScreen = document.getElementById("intro-screen");
@@ -14,10 +13,6 @@ lamp.addEventListener("click", () => {
   lampRubbed = true;
 
   lampWrap.classList.add("activated");
-
-  setTimeout(() => {
-    genie.classList.add("appear");
-  }, 300);
 
   setTimeout(() => {
     introHint.textContent = "精靈：讓我帶你找到今天想吃的美食吧！";

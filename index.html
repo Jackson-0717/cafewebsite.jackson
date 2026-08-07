@@ -8,6 +8,44 @@
 </head>
 <body>
 
+  <!-- 原創吉祥物插畫（供全站重複使用） -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="mascot" viewBox="0 0 200 240">
+        <radialGradient id="mascotBody" cx="38%" cy="30%" r="75%">
+          <stop offset="0%" stop-color="#ffe0ad"/>
+          <stop offset="60%" stop-color="#ffb266"/>
+          <stop offset="100%" stop-color="#ff8c3e"/>
+        </radialGradient>
+        <radialGradient id="mascotPetal" cx="40%" cy="30%" r="80%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="#f2ecff"/>
+        </radialGradient>
+        <line x1="100" y1="86" x2="100" y2="42" stroke="#6fae5a" stroke-width="7" stroke-linecap="round"/>
+        <g transform="translate(100,32)">
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(0)"/>
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(72)"/>
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(144)"/>
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(216)"/>
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(288)"/>
+          <circle r="10" fill="#ffd23f"/>
+        </g>
+        <ellipse cx="76" cy="200" rx="16" ry="9" fill="#e07b2e"/>
+        <ellipse cx="124" cy="200" rx="16" ry="9" fill="#e07b2e"/>
+        <ellipse cx="100" cy="140" rx="58" ry="66" fill="url(#mascotBody)"/>
+        <ellipse cx="80" cy="112" rx="18" ry="22" fill="#fffdf8"/>
+        <ellipse cx="124" cy="112" rx="18" ry="22" fill="#fffdf8"/>
+        <circle cx="84" cy="117" r="8.5" fill="#3a2618"/>
+        <circle cx="128" cy="117" r="8.5" fill="#3a2618"/>
+        <circle cx="81.5" cy="113.5" r="2.6" fill="#fff"/>
+        <circle cx="125.5" cy="113.5" r="2.6" fill="#fff"/>
+        <ellipse cx="62" cy="138" rx="9" ry="5.5" fill="#ff8ba0" opacity="0.55"/>
+        <ellipse cx="142" cy="138" rx="9" ry="5.5" fill="#ff8ba0" opacity="0.55"/>
+        <path d="M84 152 Q100 165 120 152" fill="none" stroke="#7a3f10" stroke-width="4" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- 阿拉丁神燈入場動畫 -->
   <section id="intro-screen" class="intro-screen">
     <div class="stars"></div>
@@ -18,7 +56,7 @@
       <div class="smoke smoke1"></div>
       <div class="smoke smoke2"></div>
       <div class="smoke smoke3"></div>
-      <div class="genie" id="genie">🧞</div>
+      <div class="genie" id="genie"><svg class="mascot-icon"><use href="#mascot"></use></svg></div>
       <div class="lamp" id="lamp">🪔</div>
     </div>
 
@@ -36,7 +74,7 @@
 
     <section class="quiz" id="quiz">
       <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-      <div class="quiz-genie">🧞</div>
+      <div class="quiz-genie"><svg class="mascot-icon"><use href="#mascot"></use></svg></div>
       <h2 class="quiz-question" id="quiz-question"></h2>
       <div class="chip-row" id="quiz-options"></div>
       <div class="quiz-nav">

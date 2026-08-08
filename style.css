@@ -24,7 +24,7 @@ body {
   justify-content: center;
   background-image:
     radial-gradient(circle at 50% 30%, rgba(3, 10, 22, 0.4) 0%, rgba(1, 4, 12, 0.82) 100%),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Heart_and_Soul_nebulae.jpg?width=1920");
+    url("bg-nebula.jpg");
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -171,7 +171,7 @@ body {
   pointer-events: none;
   background-image:
     linear-gradient(160deg, rgba(255, 247, 237, 0.82) 0%, rgba(255, 228, 214, 0.75) 100%),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Sun_shining_on_forest_floor_(Unsplash).jpg?width=1600");
+    url("bg-forest.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

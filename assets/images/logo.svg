@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">光陰咖啡館 Logo</title>
+  <desc id="logoDesc">復古圓形徽章式咖啡館標誌，中央為咖啡杯與豆子圖案，環繞店名與成立年份</desc>
+
+  <defs>
+    <circle id="ringPath" cx="150" cy="150" r="118" />
+    <path id="textArcTop" d="M 45,150 A 105,105 0 0 1 255,150" />
+    <path id="textArcBottom" d="M 255,160 A 105,105 0 0 1 45,160" />
+  </defs>
+
+  <!-- outer paper texture circle -->
+  <circle cx="150" cy="150" r="148" fill="#f3e6cf" stroke="#5b3a29" stroke-width="4"/>
+  <circle cx="150" cy="150" r="138" fill="none" stroke="#5b3a29" stroke-width="2"/>
+  <circle cx="150" cy="150" r="130" fill="none" stroke="#5b3a29" stroke-width="1.5" stroke-dasharray="2 4"/>
+
+  <!-- inner emblem circle -->
+  <circle cx="150" cy="150" r="105" fill="#5b3a29"/>
+  <circle cx="150" cy="150" r="100" fill="none" stroke="#f3e6cf" stroke-width="2"/>
+
+  <!-- decorative coffee beans ring -->
+  <g fill="#f3e6cf" opacity="0.9">
+    <g transform="translate(150,52) rotate(0)"><ellipse rx="5" ry="8"/><line x1="0" y1="-7" x2="0" y2="7" stroke="#5b3a29" stroke-width="1"/></g>
+    <g transform="translate(150,52) rotate(45) translate(0,0)"></g>
+  </g>
+
+  <!-- top curved text: 光陰咖啡館 -->
+  <text font-family="'Noto Serif TC', 'PMingLiU', serif" font-size="22" fill="#f3e6cf" letter-spacing="4">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">✦ 光　陰　咖　啡　館 ✦</textPath>
+  </text>
+
+  <!-- bottom curved text: EST. + year -->
+  <text font-family="Georgia, serif" font-size="15" fill="#f3e6cf" letter-spacing="3">
+    <textPath href="#textArcBottom" startOffset="50%" text-anchor="middle">— GUANGYIN CAFÉ · EST. 1978 —</textPath>
+  </text>
+
+  <!-- coffee cup icon -->
+  <g transform="translate(150,158)">
+    <!-- steam -->
+    <path d="M -18,-58 C -24,-68 -12,-72 -18,-82" stroke="#f3e6cf" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 0,-60 C -6,-70 6,-74 0,-84" stroke="#f3e6cf" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 18,-58 C 12,-68 24,-72 18,-82" stroke="#f3e6cf" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- saucer -->
+    <ellipse cx="0" cy="30" rx="46" ry="8" fill="#f3e6cf"/>
+    <!-- cup body -->
+    <path d="M -34,-28 L -28,20 A 28,10 0 0 0 28,20 L 34,-28 Z" fill="#f3e6cf"/>
+    <!-- cup rim -->
+    <ellipse cx="0" cy="-28" rx="34" ry="9" fill="#5b3a29" stroke="#f3e6cf" stroke-width="2"/>
+    <ellipse cx="0" cy="-28" rx="26" ry="6" fill="#3e2a1e"/>
+    <!-- handle -->
+    <path d="M 34,-16 C 58,-16 58,10 34,10" fill="none" stroke="#f3e6cf" stroke-width="7"/>
+  </g>
+</svg>

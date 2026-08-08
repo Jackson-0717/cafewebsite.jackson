@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jackson-0717.github.io/cafewebsite.jackson/sitemap.xml

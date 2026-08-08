@@ -10,13 +10,34 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="今天吃什麼？">
 <meta property="og:description" content="不知道今天要吃什麼？啟動魔法陣，回答 5 個小問題，精靈馬上幫你推薦一道餐點。">
-<meta property="og:image" content="bg-nebula.jpg">
+<meta property="og:image" content="https://jackson-0717.github.io/cafewebsite.jackson/bg-nebula.jpg">
+<meta property="og:url" content="https://jackson-0717.github.io/cafewebsite.jackson/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="今天吃什麼？">
 <meta name="twitter:description" content="不知道今天要吃什麼？啟動魔法陣，回答 5 個小問題，精靈馬上幫你推薦一道餐點。">
-<meta name="twitter:image" content="bg-nebula.jpg">
+<meta name="twitter:image" content="https://jackson-0717.github.io/cafewebsite.jackson/bg-nebula.jpg">
+
+<link rel="canonical" href="https://jackson-0717.github.io/cafewebsite.jackson/">
+<meta name="robots" content="index, follow">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%BD%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "今天吃什麼？",
+  "description": "不知道今天要吃什麼？啟動魔法陣，回答 5 個小問題，精靈馬上幫你推薦一道餐點，還能找附近的店家。",
+  "url": "https://jackson-0717.github.io/cafewebsite.jackson/",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TWD"
+  }
+}
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -98,7 +119,7 @@
   </section>
 
   <!-- 主體 App -->
-  <div class="app" id="app" hidden>
+  <main class="app" id="app" hidden>
 
     <header>
       <h1>🍽️ 今天吃什麼？</h1>
@@ -107,7 +128,7 @@
 
     <section class="quiz" id="quiz">
       <div class="step-dots" id="step-dots"></div>
-      <div class="quiz-slide" id="quiz-slide">
+      <div class="quiz-slide" id="quiz-slide" aria-live="polite">
         <div class="quiz-genie"><svg class="mascot-icon"><use href="#mascot"></use></svg></div>
         <h2 class="quiz-question" id="quiz-question"></h2>
         <div class="option-grid" id="quiz-options"></div>
@@ -118,12 +139,12 @@
       </div>
     </section>
 
-    <section class="result" id="result" hidden></section>
+    <section class="result" id="result" hidden aria-live="polite"></section>
 
-  </div>
+  </main>
 
   <!-- 小遊戲彈窗（不確定時的骰子／抽籤／塔羅／輪盤） -->
-  <section id="minigame-overlay" class="minigame-overlay" hidden></section>
+  <section id="minigame-overlay" class="minigame-overlay" hidden aria-live="polite"></section>
 
   <!-- 終焉結局動畫 -->
   <section id="ending-screen" class="ending-screen" hidden>

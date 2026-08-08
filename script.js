@@ -117,77 +117,131 @@ backBtn.addEventListener("click", () => {
 });
 
 /* ---------------- 不確定時的小遊戲 ---------------- */
+const MINIGAME_DURATION = { tarot: 3400, dice: 2200, lots: 2300, wheel: 2900 };
+
 function playMiniGame(question) {
   const pool = question.options.filter(o => o.value !== "__unsure__" && o.value !== null);
   const picked = pool[Math.floor(Math.random() * pool.length)];
+  const pickedIndex = pool.indexOf(picked);
 
   minigameOverlay.hidden = false;
-  minigameOverlay.innerHTML = renderMiniGameHTML(question.miniGame, picked);
-  runMiniGameAnimation(question.miniGame, picked);
+  minigameOverlay.innerHTML = `<div class="mg-particles" id="mg-particles"></div>` + renderMiniGameHTML(question.miniGame, pool, pickedIndex);
+  renderParticles(document.getElementById("mg-particles"), "stars", "#bfe6ff", 18);
+  runMiniGameAnimation(question.miniGame, pool, pickedIndex, picked);
 
+  const duration = MINIGAME_DURATION[question.miniGame] || 2200;
   setTimeout(() => {
     minigameOverlay.hidden = true;
     minigameOverlay.innerHTML = "";
     answers[question.key] = picked.value;
     advance();
-  }, 2000);
+  }, duration);
 }
 
-function renderMiniGameHTML(type, picked) {
+function renderMiniGameHTML(type, pool, pickedIndex) {
   if (type === "tarot") {
+    const cards = pool
+      .map((o, i) => `
+        <div class="tarot-card-mini" id="${i === pickedIndex ? "mg-el" : ""}" style="--i:${i}">
+          <div class="tc-face tc-back">✦</div>
+          <div class="tc-face tc-front"><span class="tc-icon">${o.icon}</span><span class="tc-label">${o.label}</span></div>
+        </div>`)
+      .join("");
     return `
       <div class="minigame-box">
-        <div class="tarot-card" id="mg-el">
-          <div class="tarot-face tarot-back">🔮</div>
-          <div class="tarot-face tarot-front">${picked.label}</div>
-        </div>
-        <p class="minigame-caption" id="mg-caption">精靈正在為你抽牌...</p>
+        <div class="tarot-spread" style="--n:${pool.length}">${cards}</div>
+        <p class="minigame-caption" id="mg-caption">精靈正在洗牌...</p>
       </div>`;
   }
   if (type === "dice") {
     return `
       <div class="minigame-box">
-        <div class="dice" id="mg-el">🎲</div>
+        <div class="dice-scene">
+          <div class="dice-cube" id="mg-el">
+            <div class="d-face d-front">⚀</div>
+            <div class="d-face d-back">⚅</div>
+            <div class="d-face d-right">⚁</div>
+            <div class="d-face d-left">⚄</div>
+            <div class="d-face d-top">⚂</div>
+            <div class="d-face d-bottom">⚃</div>
+          </div>
+        </div>
         <p class="minigame-caption" id="mg-caption">骰子滾動中...</p>
       </div>`;
   }
   if (type === "lots") {
+    const sticks = pool
+      .map((o, i) => `<div class="lots-stick" id="${i === pickedIndex ? "mg-el" : ""}" style="--i:${i};--n:${pool.length}"><span>${o.icon}</span></div>`)
+      .join("");
     return `
       <div class="minigame-box">
-        <div class="lots-cup">🥢🥢🥢🥢<span class="lots-stick" id="mg-el">🎋</span>🥢</div>
+        <div class="lots-scene">
+          <div class="lots-sticks">${sticks}</div>
+          <div class="lots-cup-body">🥡</div>
+        </div>
         <p class="minigame-caption" id="mg-caption">搖籤中...</p>
       </div>`;
   }
   // wheel
+  const n = pool.length;
+  const seg = 360 / n;
+  const colors = ["#ff8c42", "#ffb266"];
+  const stops = pool.map((_, i) => `${colors[i % 2]} ${i * seg}deg ${(i + 1) * seg}deg`).join(",");
+  const icons = pool
+    .map((o, i) => {
+      const angle = i * seg + seg / 2;
+      return `<span class="wheel-seg-icon" style="transform:translate(-50%,-50%) rotate(${angle}deg) translateY(-78px) rotate(${-angle}deg)">${o.icon}</span>`;
+    })
+    .join("");
   return `
     <div class="minigame-box">
-      <div class="wheel" id="mg-el">🎡</div>
+      <div class="wheel-scene">
+        <div class="wheel-pointer">▼</div>
+        <div class="wheel-disc" id="mg-el" style="background:conic-gradient(${stops})">${icons}</div>
+      </div>
       <p class="minigame-caption" id="mg-caption">輪盤轉動中...</p>
     </div>`;
 }
 
-function runMiniGameAnimation(type, picked) {
+function runMiniGameAnimation(type, pool, pickedIndex, picked) {
   const el = document.getElementById("mg-el");
   const caption = document.getElementById("mg-caption");
 
   if (type === "tarot") {
-    setTimeout(() => el.classList.add("flipped"), 500);
-    setTimeout(() => { caption.textContent = `抽到了：${picked.label}`; }, 1300);
-  } else if (type === "dice") {
-    el.classList.add("rolling");
-    const faces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+    const cards = document.querySelectorAll(".tarot-card-mini");
+    setTimeout(() => { caption.textContent = "選一張命運之牌..."; }, 900);
     setTimeout(() => {
-      el.classList.remove("rolling");
-      el.textContent = faces[Math.floor(Math.random() * faces.length)];
+      // 釋放發牌動畫對 transform/opacity 的控制權，讓後面的狀態變化能正常轉場
+      cards.forEach(c => { c.style.animation = "none"; });
+      cards.forEach(c => c.classList.add(c.id === "mg-el" ? "chosen" : "discard"));
+    }, 1300);
+    setTimeout(() => { el.classList.add("flipped"); }, 1650);
+    setTimeout(() => { caption.textContent = `抽到了：${picked.label}`; }, 2500);
+  } else if (type === "dice") {
+    el.style.setProperty("--fx", `${900 + Math.floor(Math.random() * 360)}deg`);
+    el.style.setProperty("--fy", `${720 + Math.floor(Math.random() * 360)}deg`);
+    el.classList.add("tumbling");
+    setTimeout(() => {
+      el.classList.add("landed");
       caption.textContent = `結果是：${picked.label}`;
-    }, 1000);
+    }, 1300);
   } else if (type === "lots") {
-    el.classList.add("pop");
-    setTimeout(() => { caption.textContent = `抽到了：${picked.label}`; }, 900);
+    const sticks = document.querySelectorAll(".lots-stick");
+    sticks.forEach(s => s.classList.add("jitter"));
+    setTimeout(() => {
+      sticks.forEach(s => {
+        s.classList.remove("jitter");
+        s.classList.add(s.id === "mg-el" ? "drawn" : "settle");
+      });
+      caption.textContent = `抽到了：${picked.label}`;
+    }, 1300);
   } else if (type === "wheel") {
-    el.style.setProperty("--spin", `${1080 + Math.floor(Math.random() * 360)}deg`);
-    el.classList.add("spin");
-    setTimeout(() => { caption.textContent = `停在：${picked.label}`; }, 1300);
+    const seg = 360 / pool.length;
+    const target = 1800 + (360 - (pickedIndex * seg + seg / 2));
+    requestAnimationFrame(() => {
+      el.style.transform = `rotate(${target}deg)`;
+    });
+    setTimeout(() => { caption.textContent = `停在：${picked.label}`; }, 2450);
   }
 }
 
@@ -252,14 +306,13 @@ function showEnding() {
   endingTitle.textContent = ending.title;
   endingLine.textContent = ending.line;
 
-  renderParticles(ending.particle, ending.gradient[2]);
+  renderParticles(endingParticles, ending.particle, ending.gradient[2]);
 }
 
-function renderParticles(type, color) {
-  endingParticles.innerHTML = "";
+function renderParticles(container, type, color, count = 26) {
+  container.innerHTML = "";
   const symbols = PARTICLE_SYMBOLS[type] || ["✦"];
   const motion = PARTICLE_MOTION[type] || "twinkle";
-  const count = 26;
 
   for (let i = 0; i < count; i++) {
     const span = document.createElement("span");
@@ -283,7 +336,7 @@ function renderParticles(type, color) {
     } else {
       span.style.animation = `particle-twinkle ${duration}s ease-in-out ${delay}s infinite`;
     }
-    endingParticles.appendChild(span);
+    container.appendChild(span);
   }
 }
 

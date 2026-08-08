@@ -1,1 +1,115 @@
-Ly8g6ZaL5aC05omT5a2X5YuV55WrICsg6YCy56uZCihmdW5jdGlvbiBpbml0SW50cm8oKSB7CiAgY29uc3QgaW50cm9TY3JlZW4gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW50cm9TY3JlZW4nKTsKICBjb25zdCBpbnRyb1RleHQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW50cm9UZXh0Jyk7CiAgY29uc3QgbWVzc2FnZSA9ICflhYnpmbDpnZzpnZzmtYHovYnvvIznrYnkvaDlhaXluqcnOwogIGxldCBpID0gMDsKCiAgZnVuY3Rpb24gdHlwZUNoYXIoKSB7CiAgICBpZiAoaSA8PSBtZXNzYWdlLmxlbmd0aCkgewogICAgICBpbnRyb1RleHQudGV4dENvbnRlbnQgPSBtZXNzYWdlLnNsaWNlKDAsIGkpOwogICAgICBpKys7CiAgICAgIHNldFRpbWVvdXQodHlwZUNoYXIsIDIwMCk7CiAgICB9CiAgfQogIHNldFRpbWVvdXQodHlwZUNoYXIsIDIwMDApOyAvLyDnrYnmi5vniYzmt6HlhaXlvozlho3plovlp4vmiZPlrZcKCiAgZnVuY3Rpb24gZW50ZXJTaXRlKCkgewogICAgaW50cm9TY3JlZW4uY2xhc3NMaXN0LmFkZCgnaGlkZScpOwogICAgZG9jdW1lbnQuYm9keS5zdHlsZS5vdmVyZmxvdyA9ICdhdXRvJzsKICB9CgogIGludHJvU2NyZWVuLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgZW50ZXJTaXRlKTsKICAvLyDoi6Xkvb/nlKjogIXkuI3pu57mk4rvvIzli5XnlavntZDmnZ/lvozoh6rli5XpgLLlhaUKICBzZXRUaW1lb3V0KGVudGVyU2l0ZSwgNjUwMCk7Cn0pKCk7CgovLyDmmpboibLmlaPmma/lhYnpu57vvIznt6nnt6npo4Tmta4KKGZ1bmN0aW9uIGluaXRCb2tlaCgpIHsKICBjb25zdCBjb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncGFydGljbGVzJyk7CiAgaWYgKCFjb250YWluZXIpIHJldHVybjsKICBjb25zdCB0b3RhbCA9IDE2OwoKICBmb3IgKGxldCBuID0gMDsgbiA8IHRvdGFsOyBuKyspIHsKICAgIGNvbnN0IHAgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgIHAuY2xhc3NOYW1lID0gJ2Jva2VoJzsKICAgIGNvbnN0IGxlZnQgPSBNYXRoLnJhbmRvbSgpICogMTAwOwogICAgY29uc3QgdG9wID0gMTAgKyBNYXRoLnJhbmRvbSgpICogNzA7CiAgICBjb25zdCBzaXplID0gOCArIE1hdGgucmFuZG9tKCkgKiAxODsKICAgIGNvbnN0IGR1cmF0aW9uID0gNiArIE1hdGgucmFuZG9tKCkgKiA2OwogICAgY29uc3QgZGVsYXkgPSBNYXRoLnJhbmRvbSgpICogNjsKICAgIGNvbnN0IGRyaWZ0ID0gKE1hdGgucmFuZG9tKCkgKiA2MCAtIDMwKS50b0ZpeGVkKDApICsgJ3B4JzsKCiAgICBwLnN0eWxlLmxlZnQgPSBsZWZ0ICsgJ3Z3JzsKICAgIHAuc3R5bGUudG9wID0gdG9wICsgJ3ZoJzsKICAgIHAuc3R5bGUud2lkdGggPSBzaXplICsgJ3B4JzsKICAgIHAuc3R5bGUuaGVpZ2h0ID0gc2l6ZSArICdweCc7CiAgICBwLnN0eWxlLnNldFByb3BlcnR5KCctLWRyaWZ0JywgZHJpZnQpOwogICAgcC5zdHlsZS5hbmltYXRpb25EdXJhdGlvbiA9IGR1cmF0aW9uICsgJ3MnOwogICAgcC5zdHlsZS5hbmltYXRpb25EZWxheSA9IGRlbGF5ICsgJ3MnOwoKICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChwKTsKICB9Cn0pKCk7CgovLyDmsLTmmbblkIrnh4jnmoTploPniI3lhYnpu54KKGZ1bmN0aW9uIGluaXRTcGFya2xlcygpIHsKICBjb25zdCBjb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc3BhcmtsZXMnKTsKICBpZiAoIWNvbnRhaW5lcikgcmV0dXJuOwogIGNvbnN0IHBhcmVudCA9IGNvbnRhaW5lci5wYXJlbnRFbGVtZW50OwogIGNvbnRhaW5lci5yZW1vdmUoKTsKICBjb25zdCB0b3RhbCA9IDEwOwoKICBmb3IgKGxldCBuID0gMDsgbiA8IHRvdGFsOyBuKyspIHsKICAgIGNvbnN0IHMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgIHMuY2xhc3NOYW1lID0gJ3NwYXJrbGUnOwogICAgY29uc3QgbGVmdCA9IDEwICsgTWF0aC5yYW5kb20oKSAqIDgwOwogICAgY29uc3QgdG9wID0gNSArIE1hdGgucmFuZG9tKCkgKiA1NTsKICAgIGNvbnN0IGRlbGF5ID0gMi4zICsgTWF0aC5yYW5kb20oKSAqIDM7CgogICAgcy5zdHlsZS5sZWZ0ID0gbGVmdCArICclJzsKICAgIHMuc3R5bGUudG9wID0gdG9wICsgJ3B4JzsKICAgIHMuc3R5bGUuYW5pbWF0aW9uRGVsYXkgPSBkZWxheSArICdzJzsKCiAgICBwYXJlbnQuYXBwZW5kQ2hpbGQocyk7CiAgfQp9KSgpOwoKLy8g5o2y5YuV5reh5YWl5pWI5p6cCihmdW5jdGlvbiBpbml0UmV2ZWFsKCkgewogIGNvbnN0IHRhcmdldHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcucmV2ZWFsJyk7CiAgY29uc3Qgb2JzZXJ2ZXIgPSBuZXcgSW50ZXJzZWN0aW9uT2JzZXJ2ZXIoKGVudHJpZXMpID0+IHsKICAgIGVudHJpZXMuZm9yRWFjaCgoZW50cnkpID0+IHsKICAgICAgaWYgKGVudHJ5LmlzSW50ZXJzZWN0aW5nKSB7CiAgICAgICAgZW50cnkudGFyZ2V0LmNsYXNzTGlzdC5hZGQoJ2luLXZpZXcnKTsKICAgICAgICBvYnNlcnZlci51bm9ic2VydmUoZW50cnkudGFyZ2V0KTsKICAgICAgfQogICAgfSk7CiAgfSwgeyB0aHJlc2hvbGQ6IDAuMTUgfSk7CiAgdGFyZ2V0cy5mb3JFYWNoKChlbCkgPT4gb2JzZXJ2ZXIub2JzZXJ2ZShlbCkpOwp9KSgpOwoKLy8g6I+c5Zau5YiG6aGe5YiH5o+bCihmdW5jdGlvbiBpbml0TWVudVRhYnMoKSB7CiAgY29uc3QgdGFicyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJy50YWItYnRuJyk7CiAgY29uc3QgcGFuZWxzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLm1lbnUtcGFuZWwnKTsKCiAgdGFicy5mb3JFYWNoKCh0YWIpID0+IHsKICAgIHRhYi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHsKICAgICAgdGFicy5mb3JFYWNoKCh0KSA9PiB7CiAgICAgICAgdC5jbGFzc0xpc3QucmVtb3ZlKCdhY3RpdmUnKTsKICAgICAgICB0LnNldEF0dHJpYnV0ZSgnYXJpYS1zZWxlY3RlZCcsICdmYWxzZScpOwogICAgICB9KTsKICAgICAgcGFuZWxzLmZvckVhY2goKHApID0+IHsKICAgICAgICBwLmNsYXNzTGlzdC5yZW1vdmUoJ2FjdGl2ZScpOwogICAgICAgIHAuaGlkZGVuID0gdHJ1ZTsKICAgICAgfSk7CgogICAgICB0YWIuY2xhc3NMaXN0LmFkZCgnYWN0aXZlJyk7CiAgICAgIHRhYi5zZXRBdHRyaWJ1dGUoJ2FyaWEtc2VsZWN0ZWQnLCAndHJ1ZScpOwogICAgICBjb25zdCBwYW5lbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwYW5lbC0nICsgdGFiLmRhdGFzZXQudGFiKTsKICAgICAgcGFuZWwuaGlkZGVuID0gZmFsc2U7CiAgICAgIHBhbmVsLmNsYXNzTGlzdC5hZGQoJ2FjdGl2ZScpOwogICAgfSk7CiAgfSk7Cn0pKCk7Cg==
+// 開場打字動畫 + 進站
+(function initIntro() {
+  const introScreen = document.getElementById('introScreen');
+  const introText = document.getElementById('introText');
+  const message = '光陰靜靜流轉，等你入座';
+  let i = 0;
+
+  function typeChar() {
+    if (i <= message.length) {
+      introText.textContent = message.slice(0, i);
+      i++;
+      setTimeout(typeChar, 200);
+    }
+  }
+  setTimeout(typeChar, 2000); // 等招牌淡入後再開始打字
+
+  function enterSite() {
+    introScreen.classList.add('hide');
+    document.body.style.overflow = 'auto';
+  }
+
+  introScreen.addEventListener('click', enterSite);
+  // 若使用者不點擊，動畫結束後自動進入
+  setTimeout(enterSite, 6500);
+})();
+
+// 暖色散景光點，緩緩飄浮
+(function initBokeh() {
+  const container = document.getElementById('particles');
+  if (!container) return;
+  const total = 16;
+
+  for (let n = 0; n < total; n++) {
+    const p = document.createElement('div');
+    p.className = 'bokeh';
+    const left = Math.random() * 100;
+    const top = 10 + Math.random() * 70;
+    const size = 8 + Math.random() * 18;
+    const duration = 6 + Math.random() * 6;
+    const delay = Math.random() * 6;
+    const drift = (Math.random() * 60 - 30).toFixed(0) + 'px';
+
+    p.style.left = left + 'vw';
+    p.style.top = top + 'vh';
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.setProperty('--drift', drift);
+    p.style.animationDuration = duration + 's';
+    p.style.animationDelay = delay + 's';
+
+    container.appendChild(p);
+  }
+})();
+
+// 水晶吊燈的閃爍光點
+(function initSparkles() {
+  const container = document.getElementById('sparkles');
+  if (!container) return;
+  const parent = container.parentElement;
+  container.remove();
+  const total = 10;
+
+  for (let n = 0; n < total; n++) {
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    const left = 10 + Math.random() * 80;
+    const top = 5 + Math.random() * 55;
+    const delay = 2.3 + Math.random() * 3;
+
+    s.style.left = left + '%';
+    s.style.top = top + 'px';
+    s.style.animationDelay = delay + 's';
+
+    parent.appendChild(s);
+  }
+})();
+
+// 捲動淡入效果
+(function initReveal() {
+  const targets = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  targets.forEach((el) => observer.observe(el));
+})();
+
+// 菜單分類切換
+(function initMenuTabs() {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.menu-panel');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach((p) => {
+        p.classList.remove('active');
+        p.hidden = true;
+      });
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById('panel-' + tab.dataset.tab);
+      panel.hidden = false;
+      panel.classList.add('active');
+    });
+  });
+})();

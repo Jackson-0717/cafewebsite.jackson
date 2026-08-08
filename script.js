@@ -413,6 +413,6 @@ function renderNearbyList(box, places) {
     .join("");
   box.innerHTML = `
     <ul class="nearby-list">${items}</ul>
-    <p class="nearby-disclaimer">資料來源：OpenStreetMap，依「距離」排序（免費地圖無公開評價分數，若需要以評價排序需串接 Google Places API 金鑰）。</p>
+    <p class="nearby-disclaimer">依距離幫你排好順序了，資料來自 OpenStreetMap。</p>
   `;
 }

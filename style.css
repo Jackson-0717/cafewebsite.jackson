@@ -540,6 +540,13 @@ header h1 {
   color: #fff;
 }
 
+@media (max-width: 400px) {
+  .minigame-box {
+    transform: scale(0.78);
+    transform-origin: center center;
+  }
+}
+
 .minigame-caption {
   margin-top: 26px;
   font-size: 1.05rem;

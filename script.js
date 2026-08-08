@@ -117,7 +117,7 @@ backBtn.addEventListener("click", () => {
 });
 
 /* ---------------- 不確定時的小遊戲 ---------------- */
-const MINIGAME_DURATION = { tarot: 3400, dice: 2200, lots: 2300, wheel: 2900 };
+const MINIGAME_DURATION = { tarot: 3400, dice: 3100, lots: 2300, wheel: 2900 };
 
 function playMiniGame(question) {
   const pool = question.options.filter(o => o.value !== "__unsure__" && o.value !== null);
@@ -224,7 +224,7 @@ function runMiniGameAnimation(type, pool, pickedIndex, picked) {
     setTimeout(() => {
       el.classList.add("landed");
       caption.textContent = `結果是：${picked.label}`;
-    }, 1300);
+    }, 1600);
   } else if (type === "lots") {
     const sticks = document.querySelectorAll(".lots-stick");
     sticks.forEach(s => s.classList.add("jitter"));

@@ -644,7 +644,7 @@ header h1 {
 }
 
 .dice-cube.tumbling {
-  animation: dice-tumble 1.3s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation: dice-tumble 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 
 .dice-cube.landed {

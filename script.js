@@ -8,7 +8,7 @@ const lampWrap = document.getElementById("lamp-wrap");
 
 let lampRubbed = false;
 
-lamp.addEventListener("click", () => {
+function activateLamp() {
   if (lampRubbed) return;
   lampRubbed = true;
 
@@ -18,6 +18,14 @@ lamp.addEventListener("click", () => {
     introHint.textContent = "精靈：讓我帶你找到今天想吃的美食吧！";
     enterBtn.hidden = false;
   }, 1100);
+}
+
+lamp.addEventListener("click", activateLamp);
+lamp.addEventListener("keydown", e => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    activateLamp();
+  }
 });
 
 enterBtn.addEventListener("click", () => {
@@ -67,13 +75,22 @@ function renderQuestion(enterDirection) {
   q.options.forEach(opt => {
     const card = document.createElement("div");
     card.className = "option-card";
-    card.innerHTML = `<span class="option-icon">${opt.icon}</span><span class="option-label">${opt.label}</span>`;
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", opt.label);
+    card.innerHTML = `<span class="option-icon" aria-hidden="true">${opt.icon}</span><span class="option-label">${opt.label}</span>`;
     if (answers[q.key] === opt.value) card.classList.add("active");
     cards.push(card);
     quizOptions.appendChild(card);
   });
   cards.forEach((card, i) => {
     card.addEventListener("click", () => selectOption(q, q.options[i], card, cards));
+    card.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        selectOption(q, q.options[i], card, cards);
+      }
+    });
   });
 
   quizSlide.classList.remove("exit-forward", "exit-back");

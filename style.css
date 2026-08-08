@@ -2,6 +2,27 @@
 
 [hidden] { display: none !important; }
 
+.option-card:focus-visible,
+.lamp:focus-visible,
+.back-btn:focus-visible,
+.enter-btn:focus-visible,
+.reroll-btn:focus-visible,
+.restart-btn:focus-visible,
+.nearby-btn:focus-visible {
+  outline: 3px solid #4fc3f7;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mc-ring,
+  .mc-scan,
+  .mc-glow,
+  .ending-particle,
+  .stars {
+    animation: none !important;
+  }
+}
+
 .mascot-icon {
   width: 1em;
   height: 1.2em;

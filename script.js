@@ -375,7 +375,11 @@ function renderResultCard(food) {
         <button class="reroll-btn" id="reroll-btn">精靈再想想</button>
         <button class="restart-btn" id="restart-btn">重新回答</button>
       </div>
-      <button class="nearby-btn" id="nearby-btn">📍 幫我找附近店家</button>
+      <div>
+        <button class="nearby-btn" id="nearby-btn">📍 幫我找附近店家</button>
+        <button class="share-btn" id="share-btn">🔗 分享結果</button>
+      </div>
+      <p class="share-feedback" id="share-feedback" hidden></p>
       <div class="nearby-box" id="nearby-box" hidden></div>
     </div>
   `;
@@ -385,6 +389,40 @@ function renderResultCard(food) {
   });
   document.getElementById("restart-btn").addEventListener("click", restartQuiz);
   document.getElementById("nearby-btn").addEventListener("click", () => findNearby(food));
+  document.getElementById("share-btn").addEventListener("click", () => shareResult(food));
+}
+
+async function shareResult(food) {
+  const text = `精靈說我今天該吃「${food.name}」${food.emoji}，換你去問問精靈今天要吃什麼吧！`;
+  const url = location.href.split("#")[0].split("?")[0];
+  const feedback = document.getElementById("share-feedback");
+
+  const showFeedback = msg => {
+    feedback.textContent = msg;
+    feedback.hidden = false;
+    setTimeout(() => { feedback.hidden = true; }, 2500);
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: "今天吃什麼？", text, url });
+    } catch (err) {
+      // 使用者取消分享，不需要處理
+    }
+    return;
+  }
+
+  if (navigator.clipboard) {
+    try {
+      await navigator.clipboard.writeText(`${text} ${url}`);
+      showFeedback("已複製到剪貼簿，貼給朋友看看吧！");
+    } catch (err) {
+      showFeedback("複製失敗，請手動複製網址分享。");
+    }
+    return;
+  }
+
+  showFeedback("這個瀏覽器不支援分享功能。");
 }
 
 function restartQuiz() {

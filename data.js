@@ -43,6 +43,50 @@ const FOODS = [
   { name: "鬆餅", category: "不限", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["開心", "放縱"], emoji: "🧇", ending: "romantic" },
   { name: "蛋糕", category: "不限", spicy: 0, mealType: "點心甜點", budget: 2, moods: ["開心", "放縱", "療癒"], emoji: "🍰", ending: "romantic" },
   { name: "剉冰", category: "不限", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["開心", "普通"], emoji: "🍧", ending: "fresh" },
+
+  { name: "蚵仔煎", category: "中式", spicy: 0, mealType: "正餐", budget: 2, moods: ["開心", "普通"], emoji: "🦪", ending: "grand" },
+  { name: "麻婆豆腐", category: "中式", spicy: 2, mealType: "正餐", budget: 1, moods: ["放縱", "開心"], emoji: "🌶️", ending: "fiery" },
+  { name: "京醬肉絲", category: "中式", spicy: 0, mealType: "正餐", budget: 2, moods: ["普通", "療癒"], emoji: "🥢", ending: "warm" },
+  { name: "蔥油餅", category: "中式", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["有點累", "普通"], emoji: "🫓", ending: "nostalgic" },
+  { name: "水煮魚", category: "中式", spicy: 2, mealType: "正餐", budget: 3, moods: ["放縱", "開心"], emoji: "🐟", ending: "fiery" },
+  { name: "燒賣", category: "中式", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["開心", "普通"], emoji: "🥟", ending: "grand" },
+  { name: "東坡肉", category: "中式", spicy: 0, mealType: "正餐", budget: 3, moods: ["放縱", "療癒"], emoji: "🍖", ending: "grand" },
+  { name: "擔仔麵", category: "中式", spicy: 0, mealType: "正餐", budget: 1, moods: ["療癒", "有點累"], emoji: "🍜", ending: "nostalgic" },
+
+  { name: "焗烤通心粉", category: "西式", spicy: 0, mealType: "正餐", budget: 2, moods: ["療癒", "普通"], emoji: "🧀", ending: "warm" },
+  { name: "墨西哥捲餅", category: "西式", spicy: 1, mealType: "正餐", budget: 1, moods: ["開心", "普通"], emoji: "🌯", ending: "adventure" },
+  { name: "炸魚薯條", category: "西式", spicy: 0, mealType: "正餐", budget: 2, moods: ["普通", "有點累"], emoji: "🍟", ending: "nostalgic" },
+  { name: "燉飯", category: "西式", spicy: 0, mealType: "正餐", budget: 2, moods: ["開心", "療癒"], emoji: "🍚", ending: "romantic" },
+  { name: "法式吐司", category: "西式", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["開心", "普通"], emoji: "🍞", ending: "romantic" },
+  { name: "貝果", category: "西式", spicy: 0, mealType: "正餐", budget: 1, moods: ["普通", "有點累"], emoji: "🥯", ending: "calm" },
+  { name: "起司鍋", category: "西式", spicy: 0, mealType: "正餐", budget: 3, moods: ["放縱", "開心"], emoji: "🧀", ending: "grand" },
+
+  { name: "親子丼", category: "日式", spicy: 0, mealType: "正餐", budget: 1, moods: ["療癒", "有點累"], emoji: "🍚", ending: "warm" },
+  { name: "味噌湯", category: "日式", spicy: 0, mealType: "湯品", budget: 1, moods: ["療癒", "普通"], emoji: "🍲", ending: "calm" },
+  { name: "烏龍麵", category: "日式", spicy: 0, mealType: "湯品", budget: 1, moods: ["有點累", "普通"], emoji: "🍜", ending: "calm" },
+  { name: "燒肉", category: "日式", spicy: 0, mealType: "正餐", budget: 3, moods: ["放縱", "開心"], emoji: "🥩", ending: "festive" },
+  { name: "大阪燒", category: "日式", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["開心", "普通"], emoji: "🥞", ending: "festive" },
+  { name: "可樂餅", category: "日式", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["普通", "有點累"], emoji: "🥔", ending: "nostalgic" },
+  { name: "炸豬排", category: "日式", spicy: 0, mealType: "正餐", budget: 2, moods: ["開心", "普通"], emoji: "🍱", ending: "warm" },
+
+  { name: "韓式冷麵", category: "韓式", spicy: 1, mealType: "正餐", budget: 2, moods: ["普通", "開心"], emoji: "🍜", ending: "fresh" },
+  { name: "韓式泡菜鍋", category: "韓式", spicy: 2, mealType: "湯品", budget: 2, moods: ["療癒", "放縱"], emoji: "🍲", ending: "fiery" },
+  { name: "辣拌麵", category: "韓式", spicy: 2, mealType: "正餐", budget: 1, moods: ["開心", "放縱"], emoji: "🌶️", ending: "fiery" },
+  { name: "紫菜飯捲", category: "韓式", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["普通", "有點累"], emoji: "🍙", ending: "fresh" },
+  { name: "起司炸雞", category: "韓式", spicy: 0, mealType: "正餐", budget: 2, moods: ["放縱", "開心"], emoji: "🍗", ending: "festive" },
+
+  { name: "泰式綠咖哩", category: "東南亞", spicy: 2, mealType: "正餐", budget: 2, moods: ["開心", "放縱"], emoji: "🍛", ending: "fiery" },
+  { name: "叻沙", category: "東南亞", spicy: 1, mealType: "湯品", budget: 2, moods: ["療癒", "普通"], emoji: "🍜", ending: "adventure" },
+  { name: "星洲炒米", category: "東南亞", spicy: 1, mealType: "正餐", budget: 1, moods: ["普通", "開心"], emoji: "🍝", ending: "adventure" },
+  { name: "越式春捲", category: "東南亞", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["普通", "療癒"], emoji: "🥢", ending: "fresh" },
+  { name: "泰式酸辣蝦湯", category: "東南亞", spicy: 2, mealType: "湯品", budget: 2, moods: ["放縱", "療癒"], emoji: "🍤", ending: "fiery" },
+
+  { name: "熱可可", category: "不限", spicy: 0, mealType: "飲料", budget: 1, moods: ["療癒", "有點累"], emoji: "🍫", ending: "warm" },
+  { name: "氣泡飲", category: "不限", spicy: 0, mealType: "飲料", budget: 1, moods: ["開心", "放縱"], emoji: "🥤", ending: "fresh" },
+  { name: "布丁", category: "不限", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["開心", "普通"], emoji: "🍮", ending: "nostalgic" },
+  { name: "提拉米蘇", category: "不限", spicy: 0, mealType: "點心甜點", budget: 2, moods: ["開心", "放縱"], emoji: "🍰", ending: "romantic" },
+  { name: "馬卡龍", category: "不限", spicy: 0, mealType: "點心甜點", budget: 2, moods: ["開心", "療癒"], emoji: "🍬", ending: "grand" },
+  { name: "雞蛋仔", category: "不限", spicy: 0, mealType: "點心甜點", budget: 1, moods: ["開心", "普通"], emoji: "🧇", ending: "festive" },
 ];
 
 // 十種原創「終焉」結局：不重現任何動畫作品畫面，純粹以色調、光影、詩句營造史詩落幕感

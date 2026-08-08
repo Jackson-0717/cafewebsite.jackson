@@ -8,7 +8,8 @@
 .enter-btn:focus-visible,
 .reroll-btn:focus-visible,
 .restart-btn:focus-visible,
-.nearby-btn:focus-visible {
+.nearby-btn:focus-visible,
+.share-btn:focus-visible {
   outline: 3px solid #4fc3f7;
   outline-offset: 2px;
 }
@@ -479,6 +480,7 @@ header h1 {
 
 .nearby-btn {
   margin-top: 16px;
+  margin-right: 8px;
   background: #2b1a52;
   border: none;
   color: #fff;
@@ -486,6 +488,27 @@ header h1 {
   border-radius: 999px;
   cursor: pointer;
   font-size: 0.9rem;
+}
+
+.share-btn {
+  margin-top: 16px;
+  background: #fff;
+  border: 1.5px solid #2b1a52;
+  color: #2b1a52;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.share-btn:hover {
+  background: #f3effc;
+}
+
+.share-feedback {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: #8a6a54;
 }
 
 .nearby-btn:hover { background: #3a2470; }

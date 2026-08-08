@@ -454,10 +454,18 @@ async function queryNearbyRestaurants(lat, lon, category) {
     );
     out center 20;
   `;
-  const res = await fetch("https://overpass-api.de/api/interpreter", {
-    method: "POST",
-    body: query,
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 20000);
+  let res;
+  try {
+    res = await fetch("https://overpass-api.de/api/interpreter", {
+      method: "POST",
+      body: query,
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timeoutId);
+  }
   if (!res.ok) throw new Error("overpass request failed");
   const data = await res.json();
 
@@ -471,6 +479,12 @@ async function queryNearbyRestaurants(lat, lon, category) {
     .slice(0, 8);
 }
 
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
 function renderNearbyList(box, places) {
   if (places.length === 0) {
     box.innerHTML = `<p class="nearby-status">方圓 5 公里內找不到符合的店家，範圍內可能真的很少，建議擴大範圍找找看。</p>`;
@@ -478,7 +492,7 @@ function renderNearbyList(box, places) {
   }
   const items = places
     .map(
-      p => `<li><span class="nearby-name">${p.name}</span><span class="nearby-dist">${(p.distance / 1000).toFixed(1)} km</span></li>`
+      p => `<li><span class="nearby-name">${escapeHtml(p.name)}</span><span class="nearby-dist">${(p.distance / 1000).toFixed(1)} km</span></li>`
     )
     .join("");
   box.innerHTML = `

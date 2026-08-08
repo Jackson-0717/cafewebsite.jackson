@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今天吃什麼？</title>
+<meta name="description" content="不知道今天要吃什麼？啟動魔法陣，回答 5 個小問題（或讓塔羅牌、骰子、抽籤、輪盤幫你決定），精靈馬上幫你推薦一道餐點，還能找附近的店家。">
+<meta name="theme-color" content="#120a2e">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="今天吃什麼？">
+<meta property="og:description" content="不知道今天要吃什麼？啟動魔法陣，回答 5 個小問題，精靈馬上幫你推薦一道餐點。">
+<meta property="og:image" content="https://jackson-0717.github.io/cafewebsite.jackson/meal-quiz/bg-nebula.jpg">
+<meta property="og:url" content="https://jackson-0717.github.io/cafewebsite.jackson/meal-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="今天吃什麼？">
+<meta name="twitter:description" content="不知道今天要吃什麼？啟動魔法陣，回答 5 個小問題，精靈馬上幫你推薦一道餐點。">
+<meta name="twitter:image" content="https://jackson-0717.github.io/cafewebsite.jackson/meal-quiz/bg-nebula.jpg">
+
+<link rel="canonical" href="https://jackson-0717.github.io/cafewebsite.jackson/meal-quiz/">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%BD%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "今天吃什麼？",
+  "description": "不知道今天要吃什麼？啟動魔法陣，回答 5 個小問題，精靈馬上幫你推薦一道餐點，還能找附近的店家。",
+  "url": "https://jackson-0717.github.io/cafewebsite.jackson/meal-quiz/",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TWD"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 原創吉祥物插畫（供全站重複使用） -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="mascot" viewBox="0 0 200 240">
+        <radialGradient id="mascotBody" cx="38%" cy="30%" r="75%">
+          <stop offset="0%" stop-color="#ffe0ad"/>
+          <stop offset="60%" stop-color="#ffb266"/>
+          <stop offset="100%" stop-color="#ff8c3e"/>
+        </radialGradient>
+        <radialGradient id="mascotPetal" cx="40%" cy="30%" r="80%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="#f2ecff"/>
+        </radialGradient>
+        <line x1="100" y1="86" x2="100" y2="42" stroke="#6fae5a" stroke-width="7" stroke-linecap="round"/>
+        <g transform="translate(100,32)">
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(0)"/>
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(72)"/>
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(144)"/>
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(216)"/>
+          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(288)"/>
+          <circle r="10" fill="#ffd23f"/>
+        </g>
+        <ellipse cx="76" cy="200" rx="16" ry="9" fill="#e07b2e"/>
+        <ellipse cx="124" cy="200" rx="16" ry="9" fill="#e07b2e"/>
+        <ellipse cx="100" cy="140" rx="58" ry="66" fill="url(#mascotBody)"/>
+        <ellipse cx="80" cy="112" rx="18" ry="22" fill="#fffdf8"/>
+        <ellipse cx="124" cy="112" rx="18" ry="22" fill="#fffdf8"/>
+        <circle cx="84" cy="117" r="8.5" fill="#3a2618"/>
+        <circle cx="128" cy="117" r="8.5" fill="#3a2618"/>
+        <circle cx="81.5" cy="113.5" r="2.6" fill="#fff"/>
+        <circle cx="125.5" cy="113.5" r="2.6" fill="#fff"/>
+        <ellipse cx="62" cy="138" rx="9" ry="5.5" fill="#ff8ba0" opacity="0.55"/>
+        <ellipse cx="142" cy="138" rx="9" ry="5.5" fill="#ff8ba0" opacity="0.55"/>
+        <path d="M84 152 Q100 165 120 152" fill="none" stroke="#7a3f10" stroke-width="4" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- 魔法陣入場動畫 -->
+  <section id="intro-screen" class="intro-screen">
+    <h1 class="intro-title">今天吃什麼？</h1>
+    <p class="intro-subtitle">踏入魔法陣，召喚美食精靈</p>
+
+    <div class="lamp-wrap" id="lamp-wrap">
+      <div class="mc-scan"></div>
+      <svg class="mc-ring mc-ring-outer" viewBox="0 0 300 300">
+        <polygon points="150,14 253,82 253,218 150,286 47,218 47,82" fill="none" stroke="#5ad2ff" stroke-width="1.2" opacity="0.6"/>
+        <circle cx="150" cy="150" r="140" fill="none" stroke="#8fe9ff" stroke-width="1" stroke-dasharray="1 7" opacity="0.7"/>
+        <circle cx="150" cy="150" r="132" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-dasharray="18 6" opacity="0.5"/>
+        <rect x="146" y="8" width="8" height="8" fill="#8fe9ff"/>
+        <rect x="146" y="284" width="8" height="8" fill="#8fe9ff"/>
+        <rect x="8" y="146" width="8" height="8" fill="#8fe9ff"/>
+        <rect x="284" y="146" width="8" height="8" fill="#8fe9ff"/>
+      </svg>
+      <svg class="mc-ring mc-ring-mid" viewBox="0 0 300 300">
+        <polygon points="150,55 227,187 73,187" fill="none" stroke="#7be8ff" stroke-width="1.2" opacity="0.8"/>
+        <polygon points="150,245 73,113 227,113" fill="none" stroke="#7be8ff" stroke-width="1.2" opacity="0.8"/>
+        <circle cx="150" cy="150" r="96" fill="none" stroke="#3ec6ff" stroke-width="0.8" opacity="0.55"/>
+        <circle cx="150" cy="150" r="104" fill="none" stroke="#1c8fd6" stroke-width="1" stroke-dasharray="3 5" opacity="0.5"/>
+      </svg>
+      <svg class="mc-ring mc-ring-inner" viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="62" fill="none" stroke="#bff3ff" stroke-width="2.5" stroke-dasharray="1 8" opacity="0.9"/>
+        <rect x="146" y="38" width="8" height="8" fill="#d6faff" transform="rotate(45 150 42)"/>
+        <rect x="146" y="254" width="8" height="8" fill="#d6faff" transform="rotate(45 150 258)"/>
+        <rect x="38" y="146" width="8" height="8" fill="#d6faff" transform="rotate(45 42 150)"/>
+        <rect x="254" y="146" width="8" height="8" fill="#d6faff" transform="rotate(45 258 150)"/>
+      </svg>
+      <div class="mc-glow"></div>
+      <div class="lamp" id="lamp" role="button" tabindex="0" aria-label="啟動魔法陣"></div>
+    </div>
+
+    <p class="intro-hint" id="intro-hint">點一下魔法陣試試看 ✨</p>
+    <button class="enter-btn" id="enter-btn" hidden>帶我進入美食世界 →</button>
+  </section>
+
+  <!-- 主體 App -->
+  <main class="app" id="app" hidden>
+
+    <header>
+      <h1>🍽️ 今天吃什麼？</h1>
+      <p class="subtitle">回答精靈的 5 個問題，讓祂幫你決定！</p>
+    </header>
+
+    <section class="quiz" id="quiz">
+      <div class="step-dots" id="step-dots"></div>
+      <div class="quiz-slide" id="quiz-slide" aria-live="polite">
+        <div class="quiz-genie"><svg class="mascot-icon" aria-hidden="true"><use href="#mascot"></use></svg></div>
+        <h2 class="quiz-question" id="quiz-question"></h2>
+        <div class="option-grid" id="quiz-options"></div>
+      </div>
+      <div class="quiz-nav">
+        <button class="back-btn" id="back-btn">← 上一題</button>
+        <span class="quiz-step" id="quiz-step"></span>
+      </div>
+    </section>
+
+    <section class="result" id="result" hidden aria-live="polite"></section>
+
+  </main>
+
+  <!-- 小遊戲彈窗（不確定時的骰子／抽籤／塔羅／輪盤） -->
+  <section id="minigame-overlay" class="minigame-overlay" hidden aria-live="polite"></section>
+
+  <!-- 終焉結局動畫 -->
+  <section id="ending-screen" class="ending-screen" hidden>
+    <div class="ending-particles" id="ending-particles"></div>
+    <p class="ending-eyebrow">答案，準備好了</p>
+    <h1 class="ending-title" id="ending-title"></h1>
+    <p class="ending-line" id="ending-line"></p>
+    <button class="enter-btn" id="ending-continue-btn">看看是什麼 →</button>
+  </section>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

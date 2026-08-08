@@ -34,7 +34,8 @@ enterBtn.addEventListener("click", () => {
 const answers = {};
 let currentStep = 0;
 
-const progressFill = document.getElementById("progress-fill");
+const stepDots = document.getElementById("step-dots");
+const quizSlide = document.getElementById("quiz-slide");
 const quizQuestion = document.getElementById("quiz-question");
 const quizOptions = document.getElementById("quiz-options");
 const quizStep = document.getElementById("quiz-step");
@@ -43,44 +44,75 @@ const quizSection = document.getElementById("quiz");
 const resultSection = document.getElementById("result");
 const minigameOverlay = document.getElementById("minigame-overlay");
 
-function renderQuestion() {
+function renderStepDots() {
+  stepDots.innerHTML = "";
+  QUESTIONS.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.className = "step-dot";
+    if (i === currentStep) dot.classList.add("current");
+    else if (i < currentStep) dot.classList.add("done");
+    stepDots.appendChild(dot);
+  });
+}
+
+function renderQuestion(enterDirection) {
   const q = QUESTIONS[currentStep];
-  progressFill.style.width = `${((currentStep + 1) / QUESTIONS.length) * 100}%`;
+  renderStepDots();
   quizQuestion.textContent = q.title;
   quizStep.textContent = `第 ${currentStep + 1} / ${QUESTIONS.length} 題`;
   backBtn.disabled = currentStep === 0;
 
   quizOptions.innerHTML = "";
+  const cards = [];
   q.options.forEach(opt => {
-    const chip = document.createElement("div");
-    chip.className = "chip";
-    chip.textContent = opt.label;
-    if (answers[q.key] === opt.value) chip.classList.add("active");
-    chip.addEventListener("click", () => {
-      if (opt.value === "__unsure__") {
-        playMiniGame(q);
-        return;
-      }
-      answers[q.key] = opt.value;
-      advance();
-    });
-    quizOptions.appendChild(chip);
+    const card = document.createElement("div");
+    card.className = "option-card";
+    card.innerHTML = `<span class="option-icon">${opt.icon}</span><span class="option-label">${opt.label}</span>`;
+    if (answers[q.key] === opt.value) card.classList.add("active");
+    cards.push(card);
+    quizOptions.appendChild(card);
   });
+  cards.forEach((card, i) => {
+    card.addEventListener("click", () => selectOption(q, q.options[i], card, cards));
+  });
+
+  quizSlide.classList.remove("exit-forward", "exit-back");
+  if (enterDirection) {
+    quizSlide.classList.add(enterDirection === "forward" ? "enter-forward" : "enter-back");
+    setTimeout(() => quizSlide.classList.remove("enter-forward", "enter-back"), 320);
+  }
+}
+
+function selectOption(question, opt, cardEl, cards) {
+  if (opt.value === "__unsure__") {
+    playMiniGame(question);
+    return;
+  }
+  cards.forEach(c => c.classList.toggle("faded", c !== cardEl));
+  cardEl.classList.add("selected");
+  answers[question.key] = opt.value;
+  setTimeout(advance, 380);
 }
 
 function advance() {
+  quizSlide.classList.add("exit-forward");
   if (currentStep < QUESTIONS.length - 1) {
-    currentStep++;
-    setTimeout(renderQuestion, 200);
+    setTimeout(() => {
+      currentStep++;
+      renderQuestion("forward");
+    }, 250);
   } else {
-    setTimeout(showEnding, 200);
+    setTimeout(showEnding, 250);
   }
 }
 
 backBtn.addEventListener("click", () => {
   if (currentStep > 0) {
-    currentStep--;
-    renderQuestion();
+    quizSlide.classList.add("exit-back");
+    setTimeout(() => {
+      currentStep--;
+      renderQuestion("back");
+    }, 250);
   }
 });
 

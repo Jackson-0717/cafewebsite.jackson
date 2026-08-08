@@ -111,18 +111,19 @@ const ENDINGS = {
 
 // 五個問題與選項定義
 // miniGame: 當使用者選擇「不確定」時觸發的小遊戲類型（tarot / dice / lots / wheel）
+// icon: 卡片上方顯示的大圖示；label: 卡片下方文字
 const QUESTIONS = [
   {
     key: "mood",
     title: "今天心情如何？",
     miniGame: "tarot",
     options: [
-      { value: "開心", label: "開心 😊" },
-      { value: "普通", label: "普通 😐" },
-      { value: "有點累", label: "有點累 😪" },
-      { value: "療癒", label: "心情不好，想療癒一下 🥺" },
-      { value: "放縱", label: "想放縱一下 🎉" },
-      { value: "__unsure__", label: "不確定，抽張塔羅牌 🔮" },
+      { value: "開心", icon: "😊", label: "開心" },
+      { value: "普通", icon: "😐", label: "普通" },
+      { value: "有點累", icon: "😪", label: "有點累" },
+      { value: "療癒", icon: "🥺", label: "想療癒一下" },
+      { value: "放縱", icon: "🎉", label: "想放縱一下" },
+      { value: "__unsure__", icon: "🔮", label: "不確定，抽塔羅牌" },
     ],
   },
   {
@@ -130,10 +131,10 @@ const QUESTIONS = [
     title: "想吃辣的嗎？",
     miniGame: "dice",
     options: [
-      { value: 0, label: "完全不辣 🙅" },
-      { value: 1, label: "小辣即可 🌶️" },
-      { value: 2, label: "越辣越好 🔥" },
-      { value: "__unsure__", label: "不確定，擲個骰子 🎲" },
+      { value: 0, icon: "🙅", label: "完全不辣" },
+      { value: 1, icon: "🌶️", label: "小辣即可" },
+      { value: 2, icon: "🔥", label: "越辣越好" },
+      { value: "__unsure__", icon: "🎲", label: "不確定，擲骰子" },
     ],
   },
   {
@@ -141,13 +142,13 @@ const QUESTIONS = [
     title: "想吃哪種料理？",
     miniGame: "lots",
     options: [
-      { value: "中式", label: "中式" },
-      { value: "西式", label: "西式" },
-      { value: "日式", label: "日式" },
-      { value: "韓式", label: "韓式" },
-      { value: "東南亞", label: "東南亞" },
-      { value: null, label: "不限" },
-      { value: "__unsure__", label: "不確定，抽支籤 🎋" },
+      { value: "中式", icon: "🥟", label: "中式" },
+      { value: "西式", icon: "🍝", label: "西式" },
+      { value: "日式", icon: "🍣", label: "日式" },
+      { value: "韓式", icon: "🍚", label: "韓式" },
+      { value: "東南亞", icon: "🌶️", label: "東南亞" },
+      { value: null, icon: "🌐", label: "不限" },
+      { value: "__unsure__", icon: "🎋", label: "不確定，抽支籤" },
     ],
   },
   {
@@ -155,11 +156,11 @@ const QUESTIONS = [
     title: "預算大概多少？",
     miniGame: "wheel",
     options: [
-      { value: 1, label: "$ 平價" },
-      { value: 2, label: "$$ 中等" },
-      { value: 3, label: "$$$ 奢侈" },
-      { value: null, label: "不限" },
-      { value: "__unsure__", label: "不確定，轉個輪盤 🎡" },
+      { value: 1, icon: "💰", label: "平價" },
+      { value: 2, icon: "💵", label: "中等" },
+      { value: 3, icon: "💎", label: "奢侈" },
+      { value: null, icon: "🌐", label: "不限" },
+      { value: "__unsure__", icon: "🎡", label: "不確定，轉輪盤" },
     ],
   },
   {
@@ -167,12 +168,12 @@ const QUESTIONS = [
     title: "想吃正餐還是想吃點心？",
     miniGame: "wheel",
     options: [
-      { value: "正餐", label: "正餐 🍚" },
-      { value: "湯品", label: "湯品 🍲" },
-      { value: "點心甜點", label: "點心甜點 🍰" },
-      { value: "飲料", label: "飲料 🧋" },
-      { value: null, label: "都可以" },
-      { value: "__unsure__", label: "不確定，轉個輪盤 🎡" },
+      { value: "正餐", icon: "🍚", label: "正餐" },
+      { value: "湯品", icon: "🍲", label: "湯品" },
+      { value: "點心甜點", icon: "🍰", label: "點心甜點" },
+      { value: "飲料", icon: "🧋", label: "飲料" },
+      { value: null, icon: "🌐", label: "都可以" },
+      { value: "__unsure__", icon: "🎡", label: "不確定，轉輪盤" },
     ],
   },
 ];

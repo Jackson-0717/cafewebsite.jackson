@@ -367,8 +367,8 @@ endingContinueBtn.addEventListener("click", () => {
 function renderResultCard(food) {
   resultSection.innerHTML = `
     <div class="result-card">
-      <div class="result-genie"><svg class="mascot-icon"><use href="#mascot"></use></svg></div>
-      <div class="result-emoji">${food.emoji}</div>
+      <div class="result-genie"><svg class="mascot-icon" aria-hidden="true"><use href="#mascot"></use></svg></div>
+      <div class="result-emoji" aria-hidden="true">${food.emoji}</div>
       <div class="result-name">${food.name}</div>
       <div class="result-tags">${food.category} · ${food.mealType} · ${"$".repeat(food.budget)}</div>
       <div>

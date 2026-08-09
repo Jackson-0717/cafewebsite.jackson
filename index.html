@@ -47,36 +47,61 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <symbol id="mascot" viewBox="0 0 200 240">
-        <radialGradient id="mascotBody" cx="38%" cy="30%" r="75%">
-          <stop offset="0%" stop-color="#ffe0ad"/>
-          <stop offset="60%" stop-color="#ffb266"/>
-          <stop offset="100%" stop-color="#ff8c3e"/>
+        <radialGradient id="mascotGlow" cx="50%" cy="42%" r="60%">
+          <stop offset="0%" stop-color="#7ee8ff" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#7ee8ff" stop-opacity="0"/>
         </radialGradient>
-        <radialGradient id="mascotPetal" cx="40%" cy="30%" r="80%">
-          <stop offset="0%" stop-color="#ffffff"/>
-          <stop offset="100%" stop-color="#f2ecff"/>
-        </radialGradient>
-        <line x1="100" y1="86" x2="100" y2="42" stroke="#6fae5a" stroke-width="7" stroke-linecap="round"/>
-        <g transform="translate(100,32)">
-          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(0)"/>
-          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(72)"/>
-          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(144)"/>
-          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(216)"/>
-          <ellipse rx="11" ry="18" fill="url(#mascotPetal)" stroke="#e4dcff" stroke-width="1" transform="rotate(288)"/>
-          <circle r="10" fill="#ffd23f"/>
+        <linearGradient id="mascotFlame" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3a2a8f"/>
+          <stop offset="45%" stop-color="#7b3ff2"/>
+          <stop offset="78%" stop-color="#c04fe8"/>
+          <stop offset="100%" stop-color="#4fd6ff"/>
+        </linearGradient>
+        <linearGradient id="mascotRim" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ffe9a8"/>
+          <stop offset="100%" stop-color="#ffcf5c"/>
+        </linearGradient>
+
+        <circle cx="100" cy="120" r="95" fill="url(#mascotGlow)"/>
+
+        <!-- 飄浮光環 -->
+        <ellipse cx="100" cy="12" rx="30" ry="9" fill="none" stroke="url(#mascotRim)" stroke-width="3" opacity="0.9"/>
+
+        <!-- 星芒 -->
+        <g fill="#ffe9a8">
+          <path d="M36 74 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" opacity="0.85"/>
+          <path d="M168 100 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5 z" opacity="0.8"/>
+          <circle cx="152" cy="64" r="2.5" opacity="0.75"/>
         </g>
-        <ellipse cx="76" cy="200" rx="16" ry="9" fill="#e07b2e"/>
-        <ellipse cx="124" cy="200" rx="16" ry="9" fill="#e07b2e"/>
-        <ellipse cx="100" cy="140" rx="58" ry="66" fill="url(#mascotBody)"/>
-        <ellipse cx="80" cy="112" rx="18" ry="22" fill="#fffdf8"/>
-        <ellipse cx="124" cy="112" rx="18" ry="22" fill="#fffdf8"/>
-        <circle cx="84" cy="117" r="8.5" fill="#3a2618"/>
-        <circle cx="128" cy="117" r="8.5" fill="#3a2618"/>
-        <circle cx="81.5" cy="113.5" r="2.6" fill="#fff"/>
-        <circle cx="125.5" cy="113.5" r="2.6" fill="#fff"/>
-        <ellipse cx="62" cy="138" rx="9" ry="5.5" fill="#ff8ba0" opacity="0.55"/>
-        <ellipse cx="142" cy="138" rx="9" ry="5.5" fill="#ff8ba0" opacity="0.55"/>
-        <path d="M84 152 Q100 165 120 152" fill="none" stroke="#7a3f10" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- 尾焰 -->
+        <path d="M100 150 C70 175 65 205 85 222 C75 210 82 190 100 178 C118 190 125 210 115 222 C135 205 130 175 100 150 Z"
+              fill="url(#mascotFlame)" opacity="0.9"/>
+
+        <!-- 精靈本體 -->
+        <path d="M100 34
+                 C136 58 154 96 148 130
+                 C143 158 127 176 100 186
+                 C73 176 57 158 52 130
+                 C46 96 64 58 100 34 Z"
+              fill="url(#mascotFlame)"/>
+
+        <path d="M100 34 C136 58 154 96 148 130 C143 158 127 176 100 186"
+              fill="none" stroke="url(#mascotRim)" stroke-width="2.5" opacity="0.55"/>
+
+        <!-- 自信瞇眼 -->
+        <path d="M70 110 Q82 100 96 108" fill="none" stroke="#101025" stroke-width="6" stroke-linecap="round"/>
+        <path d="M104 108 Q118 100 130 110" fill="none" stroke="#101025" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="90" cy="105" r="2.2" fill="#eafcff"/>
+        <circle cx="112" cy="105" r="2.2" fill="#eafcff"/>
+
+        <!-- 微笑 -->
+        <path d="M84 134 Q100 144 118 130" fill="none" stroke="#101025" stroke-width="5" stroke-linecap="round"/>
+
+        <ellipse cx="66" cy="124" rx="7" ry="4.5" fill="#ff9ad6" opacity="0.4"/>
+        <ellipse cx="134" cy="124" rx="7" ry="4.5" fill="#ff9ad6" opacity="0.4"/>
+
+        <path d="M76 166 Q100 178 124 166" fill="none" stroke="url(#mascotRim)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
       </symbol>
     </defs>
   </svg>

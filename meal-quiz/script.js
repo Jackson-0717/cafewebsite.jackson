@@ -202,19 +202,28 @@ function renderMiniGameHTML(type, pool, pickedIndex) {
   // wheel
   const n = pool.length;
   const seg = 360 / n;
-  const colors = ["#ff8c42", "#ffb266"];
-  const stops = pool.map((_, i) => `${colors[i % 2]} ${i * seg}deg ${(i + 1) * seg}deg`).join(",");
+  const colors = ["#ff8c42", "#ffb266", "#ff6f61", "#ffd166"];
+  const stops = pool
+    .map((_, i) => `${colors[i % colors.length]} ${i * seg}deg ${(i + 1) * seg}deg`)
+    .join(",");
+  const dividers = pool
+    .map((_, i) => `<span class="wheel-divider" style="transform:rotate(${i * seg}deg)"></span>`)
+    .join("");
   const icons = pool
     .map((o, i) => {
       const angle = i * seg + seg / 2;
-      return `<span class="wheel-seg-icon" style="transform:translate(-50%,-50%) rotate(${angle}deg) translateY(-78px) rotate(${-angle}deg)">${o.icon}</span>`;
+      return `<span class="wheel-seg-icon" style="transform:translate(-50%,-50%) rotate(${angle}deg) translateY(-78px) rotate(${-angle}deg)"><span class="wheel-seg-icon-badge">${o.icon}</span></span>`;
     })
     .join("");
   return `
     <div class="minigame-box">
       <div class="wheel-scene">
-        <div class="wheel-pointer">▼</div>
-        <div class="wheel-disc" id="mg-el" style="background:conic-gradient(${stops})">${icons}</div>
+        <div class="wheel-pointer"></div>
+        <div class="wheel-disc" id="mg-el" style="background:conic-gradient(${stops})">
+          ${dividers}
+          ${icons}
+          <div class="wheel-hub"></div>
+        </div>
       </div>
       <p class="minigame-caption" id="mg-caption">輪盤轉動中...</p>
     </div>`;

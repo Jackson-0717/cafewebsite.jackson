@@ -141,13 +141,6 @@ img { max-width: 100%; display: block; }
 .btn-outline:hover { background: var(--crimson); color: #fff; }
 .btn-block { display: block; width: 100%; text-align: center; }
 
-.hero-stats {
-  display: flex; gap: 3rem; margin-top: 3.5rem; flex-wrap: wrap; justify-content: center;
-}
-.stat { text-align: center; }
-.stat-num { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--crimson); }
-.stat-label { font-size: 0.85rem; color: var(--ink-soft); }
-
 /* ===== reveal 動畫 ===== */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.in-view { opacity: 1; transform: translateY(0); }

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>武魂柔道館｜以禮始，以禮終</title>
+<meta name="description" content="武魂柔道館，專業柔道教學，從兒童體適能到成人競技，傳承精力善用、自他共榮的柔道精神。">
+<link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 開場動畫 -->
+<div class="intro-screen" id="introScreen">
+  <div class="intro-bg" aria-hidden="true"></div>
+  <div class="intro-scrim" aria-hidden="true"></div>
+  <div class="intro-content">
+    <div class="intro-emblem">
+      <img src="assets/images/logo.svg" alt="" class="intro-logo">
+    </div>
+    <p class="intro-eyebrow">JUDO DOJO · 精力善用 自他共榮</p>
+    <h1 class="intro-title">武魂柔道館</h1>
+    <p class="intro-hint">輕輕點一下，踏上榻榻米</p>
+  </div>
+</div>
+
+<!-- 頂部導覽 -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#hero">
+      <img src="assets/images/logo.svg" alt="武魂柔道館 Logo" class="brand-logo">
+      <span class="brand-name">武魂柔道館</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#about">關於我們</a>
+      <a href="#classes">課程時間</a>
+      <a href="#coaches">教練團隊</a>
+      <a href="#pricing">費用方案</a>
+      <a href="#faq">常見問題</a>
+      <a href="#contact" class="nav-cta">立即諮詢</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">創立於 2010 年 · 台灣柔道教育推廣</p>
+      <h1 class="hero-title">精力善用<br><span>自他共榮</span></h1>
+      <p class="hero-sub">從一次跌倒、一次受身開始，學會用身體理解禮節、<br>用汗水鍛鍊意志。武魂柔道館，陪孩子與大人一起成長。</p>
+      <div class="hero-actions">
+        <a href="#classes" class="btn-primary">查看課程時間</a>
+        <a href="#contact" class="btn-outline">預約體驗課</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">15+</span><span class="stat-label">年教學經驗</span></div>
+      <div class="stat"><span class="stat-num">500+</span><span class="stat-label">畢業學員</span></div>
+      <div class="stat"><span class="stat-num">30+</span><span class="stat-label">全國賽事獎牌</span></div>
+    </div>
+  </section>
+
+  <!-- 關於我們 -->
+  <section id="about" class="about reveal">
+    <div class="about-media" aria-hidden="true">
+      <div class="belt-frame">
+        <div class="belt-stripe belt-white"></div>
+        <div class="belt-stripe belt-yellow"></div>
+        <div class="belt-stripe belt-green"></div>
+        <div class="belt-stripe belt-blue"></div>
+        <div class="belt-stripe belt-brown"></div>
+        <div class="belt-stripe belt-black"></div>
+      </div>
+    </div>
+    <div class="about-text">
+      <h2 class="section-title">關於武魂柔道館</h2>
+      <p>
+        武魂柔道館成立於 2010 年，創館理念源自嘉納治五郎先生的柔道精神——
+        「精力善用，自他共榮」。我們相信柔道不只是格鬥技術，更是一門透過身體
+        學習尊重、紀律與堅持的教育。
+      </p>
+      <p>
+        館內採日式傳統禮儀與現代科學化訓練並重，從最基礎的受身、體術，到參賽
+        選手的專項強化，皆由具國際裁判與教練資格的團隊親自指導。無論是零基礎
+        的孩子，或是想重拾武道精神的成人，這裡都有適合你的位置。
+      </p>
+      <ul class="about-values">
+        <li><span class="value-mark">禮</span>以禮始，以禮終</li>
+        <li><span class="value-mark">忍</span>逆境中堅持不放棄</li>
+        <li><span class="value-mark">和</span>互相扶持，自他共榮</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 課程時間 -->
+  <section id="classes" class="classes reveal">
+    <h2 class="section-title center">課程時間 Classes</h2>
+    <p class="section-sub center">依年齡與程度分班，體驗課全年開放預約</p>
+
+    <div class="class-tabs" role="tablist" aria-label="課程分類">
+      <button class="tab-btn active" data-tab="kids" role="tab" aria-selected="true">幼兒 / 兒童班</button>
+      <button class="tab-btn" data-tab="youth" role="tab" aria-selected="false">青少年競技班</button>
+      <button class="tab-btn" data-tab="adult" role="tab" aria-selected="false">成人班</button>
+    </div>
+
+    <div class="class-panel active" id="panel-kids" role="tabpanel">
+      <table class="schedule-table">
+        <thead><tr><th>班別</th><th>適合年齡</th><th>上課時間</th><th>地點</th></tr></thead>
+        <tbody>
+          <tr><td>幼兒柔道體適能</td><td>4–6 歲</td><td>週三 / 週六 16:00–17:00</td><td>一樓道場</td></tr>
+          <tr><td>兒童初階班</td><td>7–9 歲</td><td>週二 / 週四 17:00–18:15</td><td>一樓道場</td></tr>
+          <tr><td>兒童進階班</td><td>10–12 歲</td><td>週一 / 週五 18:00–19:30</td><td>一樓道場</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="class-panel" id="panel-youth" role="tabpanel" hidden>
+      <table class="schedule-table">
+        <thead><tr><th>班別</th><th>適合年齡</th><th>上課時間</th><th>地點</th></tr></thead>
+        <tbody>
+          <tr><td>青少年競技培訓</td><td>13–18 歲</td><td>週二 / 週四 / 週六 19:00–21:00</td><td>二樓競技場</td></tr>
+          <tr><td>選手集訓班</td><td>需教練評估</td><td>週日 09:00–12:00</td><td>二樓競技場</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="class-panel" id="panel-adult" role="tabpanel" hidden>
+      <table class="schedule-table">
+        <thead><tr><th>班別</th><th>適合對象</th><th>上課時間</th><th>地點</th></tr></thead>
+        <tbody>
+          <tr><td>成人零基礎班</td><td>18 歲以上，無經驗可</td><td>週一 / 週三 19:30–21:00</td><td>一樓道場</td></tr>
+          <tr><td>成人自由練習</td><td>已有段位或經驗者</td><td>週五 20:00–22:00</td><td>二樓競技場</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 教練團隊 -->
+  <section id="coaches" class="coaches reveal">
+    <h2 class="section-title center">教練團隊</h2>
+    <p class="section-sub center">具國內外柔道段位與裁判資格，教學經驗豐富</p>
+    <div class="coach-grid">
+      <div class="coach-card">
+        <div class="coach-photo" aria-hidden="true">柔</div>
+        <h3>陳建志 教練</h3>
+        <p class="coach-title">館長・柔道六段</p>
+        <p class="coach-desc">前國家代表隊選手，專長兒童啟蒙教學與地面技指導，教學逾 15 年。</p>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo" aria-hidden="true">柔</div>
+        <h3>林雅婷 教練</h3>
+        <p class="coach-title">柔道四段・國際 A 級裁判</p>
+        <p class="coach-desc">專責青少年競技培訓與賽事帶隊，擅長立技與比賽戰術分析。</p>
+      </div>
+      <div class="coach-card">
+        <div class="coach-photo" aria-hidden="true">柔</div>
+        <h3>王泰安 教練</h3>
+        <p class="coach-title">柔道三段</p>
+        <p class="coach-desc">成人班與體適能課程主教練，擅長零基礎入門引導與安全受身訓練。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 費用方案 -->
+  <section id="pricing" class="pricing reveal">
+    <h2 class="section-title center">費用方案</h2>
+    <p class="section-sub center">首次體驗課免費，歡迎親自來館感受</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>體驗課程</h3>
+        <p class="price-tag">免費</p>
+        <ul>
+          <li>單堂體驗</li>
+          <li>教練一對一介紹</li>
+          <li>免費借用道服</li>
+        </ul>
+        <a href="#contact" class="btn-outline btn-block">預約體驗</a>
+      </div>
+      <div class="price-card featured">
+        <p class="price-badge">最多人選擇</p>
+        <h3>月費會員</h3>
+        <p class="price-tag">NT$ 2,200<span>/月</span></p>
+        <ul>
+          <li>不限次數上課</li>
+          <li>依年齡分班教學</li>
+          <li>定期升級考核</li>
+          <li>館內活動優先報名</li>
+        </ul>
+        <a href="#contact" class="btn-primary btn-block">立即加入</a>
+      </div>
+      <div class="price-card">
+        <h3>季繳方案</h3>
+        <p class="price-tag">NT$ 6,000<span>/季</span></p>
+        <ul>
+          <li>不限次數上課</li>
+          <li>比月繳更划算</li>
+          <li>贈送館服一件</li>
+        </ul>
+        <a href="#contact" class="btn-outline btn-block">立即加入</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常見問題 -->
+  <section id="faq" class="faq reveal">
+    <h2 class="section-title center">常見問題</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>完全沒有柔道基礎也能報名嗎？</summary>
+        <p>可以，館內幼兒班、兒童初階班與成人零基礎班皆從最基本的受身與禮儀開始教起，無需任何經驗。</p>
+      </details>
+      <details class="faq-item">
+        <summary>需要自備道服嗎？</summary>
+        <p>體驗課可免費借用館內道服，正式加入會員後建議添購個人道服，館內有代訂服務。</p>
+      </details>
+      <details class="faq-item">
+        <summary>多久可以升級？</summary>
+        <p>依館內規定每季安排一次升級考核，教練會依學員的技術與出席狀況評估是否符合資格。</p>
+      </details>
+      <details class="faq-item">
+        <summary>會安排參加比賽嗎？</summary>
+        <p>青少年競技班與選手集訓班會依學員意願與程度，安排參加縣市賽與全國賽事，並由教練隨隊指導。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 聯絡我們 -->
+  <section id="contact" class="contact reveal">
+    <h2 class="section-title center">聯絡我們</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>營業時間</h3>
+        <p>週一 至 週六　15:00 – 22:00<br>週日　09:00 – 12:00<br>國定假日休館</p>
+      </div>
+      <div class="contact-card">
+        <h3>地址</h3>
+        <p>台北市中山區武道路 88 號 2 樓<br>捷運中山國小站 3 號出口 步行 3 分鐘</p>
+      </div>
+      <div class="contact-card">
+        <h3>聯絡方式</h3>
+        <p>02-8765-4321<br>hello@wuhun-judo.example</p>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <h3>預約體驗課</h3>
+      <div class="form-row">
+        <input type="text" name="name" placeholder="姓名" required>
+        <input type="tel" name="phone" placeholder="聯絡電話" required>
+      </div>
+      <div class="form-row">
+        <input type="text" name="child" placeholder="學員年齡 / 稱謂">
+        <select name="class">
+          <option value="">有興趣的班別</option>
+          <option value="kids">幼兒 / 兒童班</option>
+          <option value="youth">青少年競技班</option>
+          <option value="adult">成人班</option>
+        </select>
+      </div>
+      <textarea name="message" placeholder="想詢問的問題（選填）" rows="3"></textarea>
+      <button type="submit" class="btn-primary btn-block">送出預約</button>
+      <p class="form-note" id="formNote" hidden>謝謝您的預約！我們將於 1 個工作天內與您聯繫。</p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <img src="assets/images/logo.svg" alt="武魂柔道館 Logo" class="footer-logo">
+  <p>© 2010– 武魂柔道館 Wuhun Judo Dojo．精力善用 自他共榮</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

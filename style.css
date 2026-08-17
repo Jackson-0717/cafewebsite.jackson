@@ -250,8 +250,10 @@ img { max-width: 100%; }
   text-align: center;
   padding: 60px 24px;
   background:
-    linear-gradient(rgba(62,42,30,0.55), rgba(62,42,30,0.55)),
-    repeating-linear-gradient(135deg, #5b3a29 0 2px, #4a3221 2px 4px);
+    linear-gradient(rgba(30,22,14,0.6), rgba(30,22,14,0.68)),
+    url('assets/images/hero-photo-2.jpg.jpg');
+  background-size: cover;
+  background-position: center;
   color: var(--cream);
   overflow: hidden;
 }
